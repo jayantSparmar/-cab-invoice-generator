@@ -8,7 +8,7 @@
  * at the end of the month.
  */
 
-public class CabInvoiceGenerator {
+public class CabInvoiceGenerator{
 
     private static final int COST_PER_KM = 10;
     private static final int COST_PER_MIN = 1;
@@ -24,5 +24,17 @@ public class CabInvoiceGenerator {
         }
         return totalFare;
     }
+
+    public double calculateFareForMultipleRides(Ride[] rides) {
+
+        double totalFare = 0.0;
+
+        for (Ride ride : rides) {
+            totalFare = CalculateFare(ride.getDistance(), ride.getTime());
+        }
+
+        return totalFare;
+    }
+
 
 }
